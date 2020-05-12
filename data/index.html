@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Folio</title>
+</head>
+<style>
+</style>
+
+<body style='margin:0;padding:0;border:0;'>
+    <script src="util1.js"></script>
+    <script>
+        function closeSearchPane() {
+            document.getElementById("search_result").style.display = "none"
+            resizeElements()
+        }
+    </script>
+
+    <style type='text/css'>
+        .pad8 {
+            padding: 8pt;
+        }
+
+        .cpoi {
+            cursor: pointer;
+        }
+
+        .sr_hdr {
+            background-color: #ffce33;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            padding-left: 8px;
+            cursor: pointer;
+        }
+
+        .sr_txt {
+            padding: 3pt;
+            margin: 0pt;
+        }
+
+        #mainArea {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+
+        #menuBar {
+            height: 48px;
+            background-color: black;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            color: white;
+        }
+
+        #userArea {
+            height: calc(100vh - 48px);
+            display: flex;
+            flex-direction: row;
+        }
+
+        #menu {
+            flex-grow: 2;
+        }
+
+        #titleDoc {
+            display: flex;
+            align-items: center;
+            padding: 8pt;
+        }
+
+        #searchInput {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            color: white;
+            align-items: center;
+        }
+
+        #navigationBar {
+            background-color: blue;
+            height: 48px;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        #pageNavigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: inherit;
+            color: white;
+        }
+
+        #closeNavigation {
+            top: 0;
+            right: 0;
+            width: 24;
+            height: 32;
+            margin: 6pt;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #search_result_text {
+            background-color: lightyellow;
+            color: black;
+            height: calc(100% - 70px);
+            flex-grow: 2;
+            overflow-y: auto;
+            padding: 8pt;
+        }
+
+        #frm1 {
+            flex-grow: 1;
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #search_result {
+            width: calc(33% - 16px);
+            height: (100% - 48px);
+            position: relative;
+        }
+    </style>
+
+    <div id='mainArea'>
+        <div style='height:48px;'>
+            <div id='menuBar'>
+                <div id='menu'>
+                    <div id='titleDoc'>Folio</div>
+                </div>
+                <div id='searchInput'>
+                    <div class='pad8'><input id='search_box' style='height:32px;font-size:13pt;' type="text" size=25></div>
+                    <div class='pad8 cpoi' onclick='doSearch()'>SEARCH</div>
+                </div>
+            </div>
+        </div>
+        <div id='userArea'>
+            <div id='search_result'>
+                <div id='navigationBar'>
+                    <div id='pageNavigation'>1/100</div>
+                    <div id='closeNavigation' onclick='closeSearchPane();'>
+                        <img src='images/closeBtn.png' width=32 height=32>
+                    </div>
+                </div>
+                <div id='search_result_text'>Search results...</div>
+            </div>
+            <div style='flex:1;height:100%;display:flex;position:relative;top:0;'>
+                <iframe id='frm1' src='data/gfolio/index.html'></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

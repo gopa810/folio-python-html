@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body style='padding:0px;margin:0px;'>
+
+    <style type='text/css'>
+      .pad8 { padding:8pt;}
+      #mainArea { display: flex; flex-direction: column; width:100%; height:100vh;}
+      #menuBar {
+          height:48px;
+          background-color:black;
+          width:100%;
+          display:flex;
+          flex-direction: row;
+          color:white;
+      }
+      #userArea { flex:1; }
+      #menu { flex-grow: 2;  }
+      #titleDoc { display:flex; align-items:center; padding:8pt; }
+      #searchInput { flex-grow:1; display:flex; flex-direction:row; justify-content:flex-end; color: white; align-items:center; }
+      #navigationBar {
+          background-color:blue;
+          height:48px;
+          position:relative;
+      }
+      #pageNavigation { display:flex;
+          justify-content:center;
+          align-items:center;
+          width:100%;
+          height:inherit;
+          color:white;
+      }
+      #closeNavigation { top:0;right:0;width:24;height:32;margin:6pt;position:absolute; }
+      #searchResults { background-color:lightyellow;color:white;flex:1;display:flex;align-items:flex-end;overflow:auto; }
+      #frm1 { flex-grow:1; border:0; margin:0; padding:0; }
+    </style>
+
+    <div id='mainArea'>
+        <div style='height:48px;'>
+            <div id='menuBar'>
+                <div id='menu'>
+                    <div id='titleDoc'>Folio</div>
+                </div>
+                <div id='searchInput'>
+                    <div class='pad8'><input id='search_box' style='height:32px;font-size:16pt;' type="text" size=25></div>
+                    <div class='pad8'>SEARCH</div>
+                </div>
+            </div>
+        </div>
+        <div id='userArea'>
+            <div style='display:flex; height:100%; width:100%; flex-direction:row;'>
+                <div style='width:33vw;height:100%;display:flex;flex-flow:column;'>
+                    <div id='navigationBar'>
+                        <div id='pageNavigation'>1/100</div>
+                        <div id='closeNavigation'><img src='closeBtn.png' width=32 height=32></div>
+                    </div>
+                    <div id='searchResults'>Pane 2
+                    </div>
+                </div>
+                <div style='flex-grow:1;display:flex;'>
+                    <iframe id='frm1' src='data/gfolio/index.html'></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
